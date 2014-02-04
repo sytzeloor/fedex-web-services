@@ -10,7 +10,7 @@ module Fedex::WebServices
       end
 
       def service_version
-        12
+        13
       end
 
       def process_shipment(service_type, shipper, recipient,
@@ -48,7 +48,7 @@ module Fedex::WebServices
           [
             self.class.tracking_number_for(response),
             self.class.label_for(response),
-            self.class.package_rate_for(response),
+            # self.class.package_rate_for(response),
             response
           ]
         end

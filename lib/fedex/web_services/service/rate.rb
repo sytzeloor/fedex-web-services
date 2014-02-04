@@ -22,7 +22,7 @@ module Fedex::WebServices
       end
 
       def service_version
-        13
+        14
       end
 
       def self.rate_for(response, rate_request_type)

@@ -68,7 +68,7 @@ module Fedex::WebServices
           end
 
           if (error_notifications.any?)
-            raise error_notifications.map(&:message) * ". "
+            raise error_notifications.map { |notification| "#{notification.code} - #{notification.message}" } * ". "
           end
         end
     end
