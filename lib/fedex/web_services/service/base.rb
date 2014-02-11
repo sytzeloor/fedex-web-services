@@ -52,6 +52,7 @@ module Fedex::WebServices
             check_response(response)
           end
         rescue Exception => root_exception
+          Rails.logger.debug(root_exception.inspect)
           err = ServiceException.new(root_exception.message)
           err.details = root_exception.detail.fault.details.validationFailureDetail.message rescue nil
           err.set_backtrace([ "#{__FILE__}:#{__LINE__ + 1}", *root_exception.backtrace ])
